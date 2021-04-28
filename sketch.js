@@ -12,8 +12,8 @@ function setup() {
 function draw() {
   
   if (state === 'title');{
-  title();
-  } if else (state === 'level 1'){
+    title();
+  } else if (state === 'level 1'){
     level1();
   }
 }
