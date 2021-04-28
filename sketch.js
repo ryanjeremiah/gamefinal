@@ -13,7 +13,7 @@ function draw() {
   
   if (state === 'title');{
   title();
-  } else (state === 'level 1'){
+  } if else (state === 'level 1'){
     level1();
   }
 }
