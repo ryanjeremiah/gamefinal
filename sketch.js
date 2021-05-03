@@ -54,6 +54,7 @@ background(3);
 function level1(){
   background(50, 150, 200);
   text('click for points', w/4, height - 90 );
+}
 
 function levelMouseClicked(){
   points++;
