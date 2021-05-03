@@ -78,6 +78,3 @@ function youWinMouseClicked(){
   points = 0;
   
 }
-
-
- }
