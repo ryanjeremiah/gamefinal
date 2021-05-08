@@ -1,80 +1,79 @@
-'use strict';
+'use strict'
+
 
 
 let state ='title';
 let cnv;
-let points;
-let w = 1000
-let h;
+let points = 5;
 
-
-function setup() {
-   cnv = createCanvas(w,h); 
-  textFont ('Reavans Medium');
+function setup(){
+  cnv = createCanvas(600,600);  
+   textFont ('Times New Roman');
 }
-
-function draw() {
-  
-  switch (state){
-    case 'title':
-      title();
-      cnv.mouseClicked(titleMouseClicked);
-      break;
-      case 'level1':
-       title();
-      cnv.mouseClicked(level1MouseClicked);
-      break;
-      case 'you won':
-      youWin();
-      cnv.mouseClicked(youWinMouseClicked);
-      default:
-      break;
-      
-      
+function draw(){
+  if (state === 'title'){
+    title();
+    cnv.mouseClicked(function(){
+        console.log('titleMouseClicked');
+        state = 'level 1';
+});
+  } else if (state === 'level 1') {
+      level1();
+    cnv.mouseClicked(function(){
+        console.log('level1');
+        state = 'level 1';
+      });
+  } else {
+    youWon();
+    cnv.mouseClicked('canvas You Won')
+    state = 'You Won';
   }
-
+}                
+function canvasClicked(){
+  console.log('canvas is clicked');
 }
-function level1MousedClicked(){
-  consle.log('canvas is clicked on title page'); 
-      state = 'level 1'
-
+function mousedPressed(){
+  state = 'level 1';
+  
 }
-function title(){  
-background(3);
-  textSize(100);
-  stroke(200);
-  text('JAK 4',w/3, h/4);
-   textSize(20)
-  text('click anywhere to start', 100,300);
+function title(){
+  background(659, 37, 133);
+  textSize(50);
+  text('Ryans Game', 10,100);
+  stroke(255);
+  
+  textSize(20);
+  text('click me anywhere to play', 200,500);
 }
- function level1MouseClicked (){
-      consle.log('canvas is clicked on title page'); 
-      state = 'level 1'
- }
 function level1(){
-  background(50, 150, 200);
-  text('click for points', w/4, height - 90 );
+  background(195, 245, 157);
+  textSize(20);
+  text('shoot for points', 250, height - 60);
+  textSize(50);
+  text('LETS GO:Shoot', 150,100);
 }
-
-function levelMouseClicked(){
-  points++;
-  console.log('points = ' + points);
+function level1MouseClicked(){
+  points ++; 
   
-  if (points >= 450){
-    state = 'you win'
+  console.log('canvas is clicked on level 1');
+  console.log(' =' + points);
+  
+  if (points >= 5){
+    state = 'YOU WON'
   }
+ 
+}
+function youWon(){
+   background(252, 186, 3);
+  textSize(50);
+  text('You Won', 10,100);
+  stroke(255);
+  
+  textSize(90);
+  text('Start Over: Click AnyWhere', 40, 40);
 }
 
-function youWin(){
-  background(50, 168, 82);
-  textSize(100);
-  stroke(200);
-  text('YOU WON',150, 150);
-   textSize(20)
-  text('click anywhere to restart', w/1,h/3);
-}
-function youWinMouseClicked(){
+function youWonMouseClicked(){
   state = 'level 1';
   points = 0;
-  
 }
