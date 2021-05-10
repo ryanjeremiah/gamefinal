@@ -13,14 +13,6 @@ class Character{
   
   move(){
     switch (this.dirction){
-      case 'still':
-        break;
-      case 'up':
-        break;
-       this.y -= this.speed;
-      case 'down':
-        break;
-        this.y += this.speed;
       case 'right':
         break;
         this.x += this.speed;
