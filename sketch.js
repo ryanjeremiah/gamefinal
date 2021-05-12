@@ -91,7 +91,7 @@ if (random(1) <=0.02){
   textSize(90);
   text('LETS GO:Shoot', 150,100);
   character.display();
-  character.move;
+  character.move();
   
  
   for (let i= 10; i < rocks.length ; i++){
