@@ -1,4 +1,4 @@
-'use strict'
+//'use strict'
 
 
 let state ='title';
@@ -15,7 +15,7 @@ function setup(){
   text('Move Controlls')
    textFont ('Times New Roman');
   character = new Character();
-  rocks [10] = new Rocks();
+  //rocks [10] = new Rocks();
 
 }
 
@@ -32,7 +32,7 @@ function draw(){
         console.log('level1MousedClicked');
         state = 'level 1';
       });
-  } else {
+  } else if (state ===''){
     youWon();
     cnv.mouseClicked('youWonMouseClicked');
     state = 'You Won';
@@ -40,14 +40,15 @@ function draw(){
 }
 
 function keyPressed(){
- if(keyCode == LEFT_ARROW){
-  character.direction = 'left'
- }else if (keyCode == RIGHT_ARROW){
+ background('yellow');
+  text(`${key} ${keyCode}`, 10, 40);
+  print(key, 'A', keyCode);
+  print(key, 'D', keyCode);
+
+ if(keyCode == LEFT_ARROW || key == 'a' ){
+   character.direction = 'left'
+ }else if (keyCode == RIGHT_ARROW || key == 'd' ){
   character.direction = 'right'
- }else if (keyCode == UP_ARROW){
-   character.direction = 'up'
- }else if (keyCode == DOWN_ARROW){
- character.direction = 'down'
  }
 
 }
@@ -62,29 +63,24 @@ function mousedPressed(){
 }
 
 function title(){
-  background(6188, 235, 229); 
+  background(618, 235, 229); 
+  
   
   textSize(20);
-  text('MOVE CONTROLS: W,A,S,D', 90,90);
+  text('MOVE CONTROLS: A and D or left or right right arrows to move', w/ 10, h - 80);
   
   textSize(100);
   text('Shoot at Anything', 90, 250);
   
   textSize(40);
-  text('Start', 400,height - 400);
-  
-  textSize(20);
-  fill(0, 51, 255);
-  text('Red Circle is minus points, Black cricle and Green Sqaure are one point', 100,300);
-  stroke(255);
-
+  text('Click anywhere to Start', 250, height - 350);
 }
 
 function level1(){
   background(0, 68, 140);
   fill(208, 212, 21);
 
-if (random(1) <=0.02){
+if (random(1) <=0.01){
   rocks.push(new Rocks());
 }  
   
