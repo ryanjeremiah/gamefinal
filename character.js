@@ -19,6 +19,8 @@ class Character{
       case 'left':
         this.x -= this.speed;
         break;
+      case 'still':
+        break;
     }
   }
 }
