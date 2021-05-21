@@ -84,7 +84,6 @@ function mousedPressed(){
 }
 
 function title(){
-  function title(){
   background(618, 235, 229); 
   
   
