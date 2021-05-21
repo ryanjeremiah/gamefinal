@@ -98,6 +98,9 @@ function title(){
   text('To stop the chacater then press SPACEBAR', 200, height - 200);
   
   textSize(25);
+  text('Reach 2000 Points "You Win" BUT Reach -1000 Points "You Lose"', 200, height -  300);
+  
+  textSize(25);
   text('Click anywhere to Start', 250, height - 350);
 }
 
