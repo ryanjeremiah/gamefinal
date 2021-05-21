@@ -1,6 +1,6 @@
 class Guard{
   constructor(){
-    this.r = 55;
+    this.r = 100;
     this.x = random(w);
     this.y = 1 - this.r;
     this.speed = 1;
