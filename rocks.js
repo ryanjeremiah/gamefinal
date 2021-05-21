@@ -1,24 +1,33 @@
-class Rocks{
-  constructor(){
-    this.r = 80;
-    this.x = random(w);
-    this.y = 0 - this.r;
+class Character{
+  constructor(x, y, r){
+    this.r = 150;
+    this.x = w/5;
+    this.y = h - this.r;
+    this.speed= 5;
+    this.direction = 'still';
    
   }
   display(){
-    fill(44, 125, 4);
-    rect(this.x/100, this.y, this.r, this.r);
-    
-    fill (245, 29, 0);
-    ellipse(this.x/100, this.y, this.r, this.r);
-    
-    noStroke();
-    fill(20, 19, 18);
-    square(this.x/100, this.y, this.r, this.r);
-  
+     image(characterImg, this.x, this.y, this.r, this.r);
   }
+  
   move(){
-    this.y++;
-   
+    switch (this.direction){
+      case 'still':
+        break; 
+      case 'right':
+    if (this.x < w -this.r /5){ 
+        this.x += this.speed;
+    }
+        break;
+      case 'left':
+    if (this.x < w - this.r /5 > 0){ 
+        this.x -= this.speed;
+    }
+        break;
+      default:
+        break;
+        
+    }
   }
 }
