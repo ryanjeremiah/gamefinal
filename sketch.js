@@ -84,24 +84,25 @@ function mousedPressed(){
 }
 
 function title(){
+  function title(){
   background(618, 235, 229); 
   
   
   textSize(20);
-  text('MOVE CONTROLS: A and D or left or right right arrows to move', w/ 10, h - 80);
+  text('MOVE CONTROLS: A and D or left or right right arrows to move', 150, 600);
   
   fill(87, 41, 194);
   textSize(100);
   text('Jak Precursor Orbs', 90, 250);
   
   textSize(25);
-  text('To stop the chacater then press SPACEBAR', 200, height - 200);
+  text('To stop the chacater then press SPACEBAR', 200, 550);
   
   textSize(25);
-  text('Reach 2000 Points "You Win" BUT Reach -1000 Points "You Lose"', 200, height -  300);
+  text('Reach 2000 Points "You Win" BUT Reach -1000 Points "You Lose"', 100, 500);
   
-  textSize(25);
-  text('Click anywhere to Start', 250, height - 350);
+  textSize(40);
+  text('Click anywhere to Start', 250,  350);
 }
 
 function level1(){
